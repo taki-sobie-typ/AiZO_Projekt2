@@ -5,6 +5,10 @@
 #include <chrono>
 #include "../header/MainMenu.h"
 #include "../header/WeightedDirectedGraphMatrix.h"
+#include "../header/WeightedDirectedGraphList.h"
+#include "../header/PrimMatrixMST.h"
+#include "../header/PrimListMST.h"
+
 int choice;
 
 MainMenu::MainMenu(){
@@ -58,9 +62,62 @@ void MainMenu::testCorrectness() {
 }
 
 void MainMenu::testForReport() {
-    WeightedDirectedGraphMatrix testGraph(20,20);
-    testGraph.generateRandomGraph(20);
-    testGraph.printGraph();
+    //MATRIX PART
+
+
+    // Define the number of vertices and edges for the graph
+    int vertices = 5;  // Number of vertices
+    int edges = 10;    // Number of possible edges (should be enough to accommodate density)
+
+    // Create an instance of the graph
+    WeightedDirectedGraphMatrix graphMatrix(vertices, edges);
+
+    // Generate a random graph with a specified density (e.g., 50%)
+    int density = 99;
+    graphMatrix.generateRandomGraph(density);
+
+    // Print the generated graph
+    std::cout << "Generated Weighted Directed Graph:" << std::endl;
+    graphMatrix.printGraph();
+
+    // Create an instance of the PrimMST class
+    PrimMatrixMST mst(graphMatrix);
+
+    // Find the MST
+    mst.findMST();
+
+    // Print the MST
+    mst.printMST();
+
+
+
+
+    //LIST PART
+
+
+    // Define the number of vertices for the graph
+    //int vertices = 5;  // Number of vertices
+
+    // Create an instance of the graph
+    WeightedDirectedGraphList graphList(vertices);
+
+    // Generate a random graph with a specified density (e.g., 50%)
+    //int density = 50;
+    graphList.generateRandomGraph(density);
+
+    // Print the generated graph
+    std::cout << "Generated Weighted Directed Graph:" << std::endl;
+    graphList.printGraph();
+
+    // Create an instance of PrimListMST with the graph object
+    PrimListMST primListMST(graphList);
+
+    // Find the Minimum Spanning Tree using Prim's algorithm
+    primListMST.findMST();
+
+    // Print the Minimum Spanning Tree
+    std::cout << "Minimum Spanning Tree (MST) using Prim's Algorithm:" << std::endl;
+    primListMST.printMST();
 }
 
 void MainMenu::testCorrectnessFile() {

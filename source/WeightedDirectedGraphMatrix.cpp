@@ -2,19 +2,9 @@
 // Created by ogore on 29.05.2024.
 //
 #include "../header/WeightedDirectedGraphMatrix.h"
-#include <algorithm>
-#include <queue>
-#include <unordered_set>
+#include <iomanip> // For std::setw
 
-// Custom hash function for std::pair<int, int>
-struct pair_hash {
-    template <class T1, class T2>
-    std::size_t operator() (const std::pair<T1, T2>& pair) const {
-        return std::hash<T1>()(pair.first) ^ std::hash<T2>()(pair.second);
-    }
-};
-
-// Konstruktor
+// Constructor
 WeightedDirectedGraphMatrix::WeightedDirectedGraphMatrix(int vertices, int edges)
         : vertices(vertices), edges(edges) {
     incidentMatrix = new int*[vertices];
@@ -23,12 +13,12 @@ WeightedDirectedGraphMatrix::WeightedDirectedGraphMatrix(int vertices, int edges
     }
 }
 
-// Konstruktor kopiujący
+// Copy constructor
 WeightedDirectedGraphMatrix::WeightedDirectedGraphMatrix(const WeightedDirectedGraphMatrix& other) {
     deepCopy(other);
 }
 
-// Operator przypisania
+// Assignment operator
 WeightedDirectedGraphMatrix& WeightedDirectedGraphMatrix::operator=(const WeightedDirectedGraphMatrix& other) {
     if (this != &other) {
         clear();
@@ -37,18 +27,17 @@ WeightedDirectedGraphMatrix& WeightedDirectedGraphMatrix::operator=(const Weight
     return *this;
 }
 
-// Destruktor
+// Destructor
 WeightedDirectedGraphMatrix::~WeightedDirectedGraphMatrix() {
     clear();
 }
 
-// Dodawanie krawędzi
+// Add edge
 void WeightedDirectedGraphMatrix::addEdge(int src, int dest, int weight) {
     if (weight <= 0) {
         throw std::invalid_argument("Edge weight must be a positive number.");
     }
 
-    // Szukamy wolnej kolumny (krawędzi) w macierzy incydencji
     for (int i = 0; i < edges; ++i) {
         if (incidentMatrix[src][i] == 0 && incidentMatrix[dest][i] == 0) {
             incidentMatrix[src][i] = weight;
@@ -60,17 +49,25 @@ void WeightedDirectedGraphMatrix::addEdge(int src, int dest, int weight) {
     throw std::runtime_error("No available edge slot for the given vertices.");
 }
 
-// Wyświetlanie grafu
+// Print graph
 void WeightedDirectedGraphMatrix::printGraph() const {
+    std::cout << "Incident Matrix:" << std::endl;
+    std::cout << "   ";
+    for (int j = 0; j < vertices; ++j) {
+        std::cout << std::setw(3) << j << " ";
+    }
+    std::cout << std::endl;
     for (int i = 0; i < vertices; ++i) {
-        for (int j = 0; j < edges; ++j) {
-            std::cout << incidentMatrix[i][j] << " ";
+        std::cout << std::setw(2) << i << ": ";
+        for (int j = 0; j < vertices; ++j) {
+            std::cout << std::setw(3) << incidentMatrix[i][j] << " ";
         }
         std::cout << std::endl;
     }
 }
 
-// Głębokie kopiowanie
+
+// Deep copy
 void WeightedDirectedGraphMatrix::deepCopy(const WeightedDirectedGraphMatrix& other) {
     vertices = other.vertices;
     edges = other.edges;
@@ -83,7 +80,7 @@ void WeightedDirectedGraphMatrix::deepCopy(const WeightedDirectedGraphMatrix& ot
     }
 }
 
-// Usuwanie dynamicznie alokowanej pamięci
+// Clear memory
 void WeightedDirectedGraphMatrix::clear() {
     for (int i = 0; i < vertices; ++i) {
         delete[] incidentMatrix[i];
@@ -92,13 +89,27 @@ void WeightedDirectedGraphMatrix::clear() {
     incidentMatrix = nullptr;
 }
 
-// Generowanie losowego grafu
+// Get weight between two vertices
+int WeightedDirectedGraphMatrix::getWeight(int src, int dest) const {
+    for (int i = 0; i < edges; ++i) {
+        if (incidentMatrix[src][i] != 0 && incidentMatrix[dest][i] != 0) {
+            return incidentMatrix[src][i];
+        }
+    }
+    return 0; // Return 0 if there is no edge between src and dest
+}
+
+// Get size of the graph
+int WeightedDirectedGraphMatrix::getSize() const {
+    return vertices;
+}
+
+// Generate random graph
 void WeightedDirectedGraphMatrix::generateRandomGraph(int density) {
     if (density < 1 || density > 100) {
         throw std::invalid_argument("Density must be between 1 and 100.");
     }
 
-    // Resetowanie grafu
     clear();
     incidentMatrix = new int*[vertices];
     for (int i = 0; i < vertices; ++i) {
@@ -107,7 +118,6 @@ void WeightedDirectedGraphMatrix::generateRandomGraph(int density) {
 
     std::srand(std::time(nullptr));
 
-    // Generowanie minimalnego drzewa rozpinającego
     std::vector<bool> inMST(vertices, false);
     inMST[0] = true;
     int addedEdges = 0;
@@ -121,19 +131,17 @@ void WeightedDirectedGraphMatrix::generateRandomGraph(int density) {
         while (inMST[v]) {
             v = std::rand() % vertices;
         }
-        int weight = (std::rand() % 10) + 1; // Random weight between 1 and 10
+        int weight = (std::rand() % 10) + 1;
         addEdge(u, v, weight);
         inMST[v] = true;
         addedEdges++;
     }
 
-    // Dodawanie dodatkowych krawędzi do osiągnięcia żądanej gęstości
     int maxEdges = vertices * (vertices - 1);
     int targetEdges = (maxEdges * density) / 100;
 
     std::unordered_set<std::pair<int, int>, pair_hash> existingEdges;
 
-    // Collecting existing edges
     for (int i = 0; i < vertices; ++i) {
         for (int j = 0; j < edges; ++j) {
             if (incidentMatrix[i][j] != 0) {
@@ -152,21 +160,18 @@ void WeightedDirectedGraphMatrix::generateRandomGraph(int density) {
         }
     }
 
-    // Generate additional edges
     while (addedEdges < targetEdges) {
         int u = std::rand() % vertices;
         int v = std::rand() % vertices;
         if (u != v && existingEdges.find({u, v}) == existingEdges.end()) {
-            int weight = (std::rand() % 10) + 1; // Random weight between 1 and 10
+            int weight = (std::rand() % 10) + 1;
             addEdge(u, v, weight);
             existingEdges.emplace(u, v);
             addedEdges++;
         }
 
-        // Break if no more unique edges can be added to avoid endless loop
         if (existingEdges.size() == maxEdges) {
             break;
         }
     }
 }
-
