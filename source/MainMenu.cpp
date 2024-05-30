@@ -1,23 +1,24 @@
 //
 // Created by Patryk on 27.05.2024.
 //
+
 #include <chrono>
 #include "../header/MainMenu.h"
+#include "../header/WeightedDirectedGraphMatrix.h"
 int choice;
 
-MainMenu::MainMenu() : intArray(1), floatArray(0), charArray(0) {
+MainMenu::MainMenu(){
 }
 
 void MainMenu::startMenu() {
-    std::cout << "Choose test type:" << std::endl;
-    std::cout << "1. Algorithm correctness test" << std::endl;
-    std::cout << "2. Test for report" << std::endl;
-    std::cout << "3. Test for specific scenario" << std::endl;
+    std::cout << "Choose:" << std::endl;
+    std::cout << "1. Algorithm Correctness" << std::endl;
+    std::cout << "2. Test Report" << std::endl;
     choice = getChoice();
 
     switch (choice) {
         case 1:
-            testCorrectness(); // Wywołanie funkcji testującej poprawność algorytmu
+            testCorrectness(); // Wywołanie funkcji testującej poprawność
             break;
         case 2:
             std::cout << "Report Test Procedure Starting!:" << std::endl;
@@ -26,11 +27,8 @@ void MainMenu::startMenu() {
             std::cin >> choice;
 
             if(choice == 1){
-                testForReport(); // Wywołanie funkcji testującej raport
+                testForReport(); // Wywołanie funkcji testującej do raportu
             }
-            break;
-        case 3:
-            testSpecificScenario(); // Wywołanie funkcji testującej konkretny scenariusz tablicy
             break;
         default:
             std::cerr << "Invalid choice!" << std::endl;
@@ -38,21 +36,10 @@ void MainMenu::startMenu() {
     }
 }
 
-void MainMenu::testSpecificScenario() {
-}
-
-
-
-template<typename T>
-void MainMenu::beginSortingForSpecificScenario(const DynamicArray<T>& initialArray, const std::string& type, int size) {
-}
-
-
-
 void MainMenu::testCorrectness() {
     std::cout << "Choose:" << std::endl;
     std::cout << "1. Form File" << std::endl;
-    std::cout << "2. Generate your self" << std::endl;
+    std::cout << "2. Generate Random" << std::endl;
     choice = getChoice();
 
     switch (choice) {
@@ -61,7 +48,7 @@ void MainMenu::testCorrectness() {
             break;
         }
         case 2:{
-            testCorrectnessGenerateYourSelf();
+            testCorrectnessGenerateRandom();
             break;
         }
         default:
@@ -70,22 +57,17 @@ void MainMenu::testCorrectness() {
     }
 }
 
+void MainMenu::testForReport() {
+    WeightedDirectedGraphMatrix testGraph(20,20);
+    testGraph.generateRandomGraph(20);
+    testGraph.printGraph();
+}
 
 void MainMenu::testCorrectnessFile() {
+    chooseFileName();
 }
 
-
-void MainMenu::testCorrectnessGenerateYourSelf() {
-}
-
-template<typename T>
-DynamicArray<T> MainMenu::generateRandomArray(int size, int min, int max) {
-
-}
-
-template<typename T>
-DynamicArray<T> MainMenu::loadArrayFromFile(const std::string& filename) {
-
+void MainMenu::testCorrectnessGenerateRandom() {
 }
 
 int MainMenu::getChoice() {
@@ -105,35 +87,10 @@ std::string MainMenu::chooseFileName(){
     return filename;
 }
 
-template<typename T>
-void MainMenu::beginSortingCorectness(const DynamicArray<T>& initialArray){
-
-}
-
-template<typename T>
-void MainMenu::sortingCheck(const DynamicArray<T>& initialArray) {
-
-}
-
-
-void MainMenu::testForReport() {
-
-}
-
-template<typename T>
-void MainMenu::beginSortingForReportInsertion(const DynamicArray<T>& initialArray, const std::string& type, int size) {
-
-}
-
-template<typename T>
-void MainMenu::beginSortingForReport(const DynamicArray<T>& initialArray, const std::string& type, int size) {
-
-}
-
-void MainMenu::measureAndSaveSortingTime(int size, const std::string& type, const std::string& algorithmName, std::chrono::duration<double> elapsedTime) {
+void MainMenu::measureAndSaveSortingTime(int size, int density, const std::string& type, const std::string& algorithmName, std::chrono::duration<double> elapsedTime) {
     std::ofstream file(type + "_"+ algorithmName + "Times.csv", std::ios_base::app);
     if (file.is_open()) { // Sprawdzenie czy plik został otwarty poprawnie
-        file << elapsedTime.count()<< ";" << size << std::endl; // Zapis czasu sortowania oraz rozmiaru tablicy
+        file << elapsedTime.count()<< ";" << size << ";" << density << std::endl; // Zapis czasu i innych parametrów
         file.close(); // Zamknięcie pliku
     } else {
         std::cerr << "Unable to open file for writing." << std::endl; // Komunikat o niepowodzeniu otwarcia pliku

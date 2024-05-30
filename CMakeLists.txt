@@ -14,4 +14,6 @@ add_executable(AiZO_Projekt2 main.cpp
         header/MainMenu.h
         header/MainMenu.h
         source/MainMenu.cpp
-        source/MainMenu.cpp)
+        source/MainMenu.cpp
+        header/WeightedDirectedGraphMatrix.h
+        source/WeightedDirectedGraphMatrix.cpp)
