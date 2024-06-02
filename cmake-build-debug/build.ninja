@@ -85,6 +85,12 @@ build CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj: CXX_COMPILER__AiZ
   OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
   OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
 
+build CMakeFiles/AiZO_Projekt2.dir/source/DijkstraShortestPathMatrix.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/DijkstraShortestPathMatrix.cpp || cmake_object_order_depends_target_AiZO_Projekt2
+  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\DijkstraShortestPathMatrix.cpp.obj.d
+  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target AiZO_Projekt2
@@ -93,7 +99,7 @@ build CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj: CXX_COMPILER__AiZ
 #############################################
 # Link the executable AiZO_Projekt2.exe
 
-build AiZO_Projekt2.exe: CXX_EXECUTABLE_LINKER__AiZO_Projekt2_Debug CMakeFiles/AiZO_Projekt2.dir/main.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/MainMenu.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphMatrix.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphList.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimMatrixMST.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj
+build AiZO_Projekt2.exe: CXX_EXECUTABLE_LINKER__AiZO_Projekt2_Debug CMakeFiles/AiZO_Projekt2.dir/main.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/MainMenu.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphMatrix.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphList.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimMatrixMST.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/DijkstraShortestPathMatrix.cpp.obj
   FLAGS = -static-libstdc++ -static-libgcc -g
   LINK_FLAGS = -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

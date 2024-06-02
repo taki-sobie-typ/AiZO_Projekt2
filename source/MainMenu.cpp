@@ -8,6 +8,7 @@
 #include "../header/WeightedDirectedGraphList.h"
 #include "../header/PrimMatrixMST.h"
 #include "../header/PrimListMST.h"
+#include "../header/DijkstraShortestPathMatrix.h"
 
 int choice;
 
@@ -65,20 +66,22 @@ void MainMenu::testForReport() {
     //MATRIX PART
 
 
-    // Define the number of vertices and edges for the graph
-    int vertices = 5;  // Number of vertices
-    int edges = 10;    // Number of possible edges (should be enough to accommodate density)
+    // Create a graph with 6 vertices and 8 edges
+    WeightedDirectedGraphMatrix graphMatrix(20);
+    graphMatrix.generateRandomGraph(29);
 
-    // Create an instance of the graph
-    WeightedDirectedGraphMatrix graphMatrix(vertices, edges);
 
-    // Generate a random graph with a specified density (e.g., 50%)
-    int density = 99;
-    graphMatrix.generateRandomGraph(density);
-
-    // Print the generated graph
-    std::cout << "Generated Weighted Directed Graph:" << std::endl;
+    // Print the graph
     graphMatrix.printGraph();
+
+    // Create DijkstraShortestPathMatrix object
+    DijkstraShortestPathMatrix dijkstra(graphMatrix);
+
+    // Find the shortest path from vertex 0 to vertex 5
+    std::vector<int> path = dijkstra.findShortestPath(graphMatrix.getFirstVertex(), graphMatrix.getLastVertex());
+
+    // Print the shortest path
+    dijkstra.printShortestPath(path);
 
     // Create an instance of the PrimMST class
     PrimMatrixMST mst(graphMatrix);
@@ -92,18 +95,18 @@ void MainMenu::testForReport() {
 
 
 
+    /*
     //LIST PART
-
 
     // Define the number of vertices for the graph
     //int vertices = 5;  // Number of vertices
 
     // Create an instance of the graph
-    WeightedDirectedGraphList graphList(vertices);
+    WeightedDirectedGraphList graphList(12);
 
     // Generate a random graph with a specified density (e.g., 50%)
     //int density = 50;
-    graphList.generateRandomGraph(density);
+    graphList.generateRandomGraph(30);
 
     // Print the generated graph
     std::cout << "Generated Weighted Directed Graph:" << std::endl;
@@ -118,6 +121,7 @@ void MainMenu::testForReport() {
     // Print the Minimum Spanning Tree
     std::cout << "Minimum Spanning Tree (MST) using Prim's Algorithm:" << std::endl;
     primListMST.printMST();
+    */
 }
 
 void MainMenu::testCorrectnessFile() {

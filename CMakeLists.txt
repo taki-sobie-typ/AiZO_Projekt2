@@ -22,4 +22,6 @@ add_executable(AiZO_Projekt2 main.cpp
         header/PrimMatrixMST.h
         source/PrimMatrixMST.cpp
         header/PrimListMST.h
-        source/PrimListMST.cpp)
+        source/PrimListMST.cpp
+        header/DijkstraShortestPathMatrix.h
+        source/DijkstraShortestPathMatrix.cpp)
