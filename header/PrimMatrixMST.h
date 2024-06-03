@@ -2,13 +2,13 @@
 // Created by Patryk on 30.05.2024.
 //
 
-#ifndef AIZO_PROJEKT2_PRIMMATRIXMST_H
-#define AIZO_PROJEKT2_PRIMMATRIXMST_H
+#ifndef PRIMMATRIXMST_H
+#define PRIMMATRIXMST_H
 
-#include <vector>
-#include <iostream>
-#include <limits>
 #include "WeightedDirectedGraphMatrix.h"
+#include <vector>
+#include <limits>
+#include <iostream>
 
 class PrimMatrixMST {
 public:
@@ -17,13 +17,12 @@ public:
     void printMST() const;
 
 private:
-    int vertices;  // Number of vertices
-    const WeightedDirectedGraphMatrix& graph;  // Weighted Directed Graph
-    std::vector<int> parent;  // Array to store the MST
-    std::vector<int> key;  // Key values used to pick minimum weight edge in cut
-    std::vector<bool> inMST;  // To represent set of vertices not yet included in MST
-
     int minKey();
+    const WeightedDirectedGraphMatrix& graph;
+    int vertices;
+    std::vector<int> parent;
+    std::vector<int> key;
+    std::vector<bool> inMST;
 };
 
-#endif //AIZO_PROJEKT2_PRIMMATRIXMST_H
+#endif // PRIMMATRIXMST_H

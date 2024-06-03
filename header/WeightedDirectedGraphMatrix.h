@@ -2,21 +2,19 @@
 // Created by ogore on 29.05.2024.
 //
 
-#ifndef WEIGHTED_DIRECTED_GRAPH_MATRIX_H
-#define WEIGHTED_DIRECTED_GRAPH_MATRIX_H
+#ifndef WEIGHTEDDIRECTEDGRAPHMATRIX_H
+#define WEIGHTEDDIRECTEDGRAPHMATRIX_H
 
 #include <vector>
+#include <stdexcept>
+#include <iostream>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
+#include <stack>
+#include <unordered_set>
 
 class WeightedDirectedGraphMatrix {
-private:
-    int vertices;
-    std::vector<std::vector<int>> incidentMatrix;
-
-    void deepCopy(const WeightedDirectedGraphMatrix& other);
-    void clear();
-
-    void createSpanningTree();
-
 public:
     WeightedDirectedGraphMatrix(int vertices);
     WeightedDirectedGraphMatrix(const WeightedDirectedGraphMatrix& other);
@@ -28,10 +26,17 @@ public:
     int getWeight(int src, int dest) const;
     int getSize() const;
     void generateRandomGraph(int density);
-
-
+    void createSpanningTree();
     int getFirstVertex() const;
     int getLastVertex() const;
+
+private:
+    void deepCopy(const WeightedDirectedGraphMatrix& other);
+    void clear();
+
+    int vertices;
+    std::vector<std::vector<int>> incidentMatrix;
 };
 
-#endif // WEIGHTED_DIRECTED_GRAPH_MATRIX_H
+#endif // WEIGHTEDDIRECTEDGRAPHMATRIX_H
+

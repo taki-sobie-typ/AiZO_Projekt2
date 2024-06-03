@@ -68,7 +68,7 @@ void MainMenu::testForReport() {
 
     // Create a graph with 6 vertices and 8 edges
     WeightedDirectedGraphMatrix graphMatrix(20);
-    graphMatrix.generateRandomGraph(29);
+    graphMatrix.generateRandomGraph(20);
 
 
     // Print the graph

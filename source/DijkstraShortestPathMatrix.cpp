@@ -6,7 +6,6 @@
 #include <iostream>
 #include <queue>
 #include <vector>
-#include <unordered_set>
 #include <algorithm> // For std::reverse
 #include <limits>    // For std::numeric_limits
 
@@ -81,3 +80,4 @@ void DijkstraShortestPathMatrix::printShortestPath(const std::vector<int>& path)
     std::cout << std::endl;
     std::cout << "Total distance: " << totalDistance << std::endl;
 }
+

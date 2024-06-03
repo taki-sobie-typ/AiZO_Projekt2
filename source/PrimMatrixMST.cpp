@@ -10,7 +10,7 @@ PrimMatrixMST::PrimMatrixMST(const WeightedDirectedGraphMatrix& graph)
 
 // Function to find the vertex with the minimum key value that is not yet included in the MST
 int PrimMatrixMST::minKey() {
-    int min = std::numeric_limits<int>::max(), minIndex;
+    int min = std::numeric_limits<int>::max(), minIndex = -1;
     for (int v = 0; v < vertices; ++v) {
         if (!inMST[v] && key[v] < min) {
             min = key[v];
@@ -35,7 +35,7 @@ void PrimMatrixMST::findMST() {
         // Update key value and parent index of the adjacent vertices of the picked vertex
         for (int v = 0; v < vertices; ++v) {
             int weight = graph.getWeight(u, v);
-            if (weight && !inMST[v] && weight < key[v]) {
+            if (weight > 0 && !inMST[v] && weight < key[v]) {
                 parent[v] = u;
                 key[v] = weight;
             }
@@ -47,8 +47,11 @@ void PrimMatrixMST::findMST() {
 void PrimMatrixMST::printMST() const {
     std::cout << "Edge   Weight" << std::endl;
     for (int i = 1; i < vertices; ++i) {
-        std::cout << parent[i] << " - " << i << "    " << graph.getWeight(i, parent[i]) << std::endl;
+        if (parent[i] != -1) {
+            std::cout << parent[i] << " - " << i << "    " << graph.getWeight(parent[i], i) << std::endl;
+        }
     }
 }
+
 
 
