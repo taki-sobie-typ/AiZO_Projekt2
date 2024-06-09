@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: AiZO_Projekt2
+# Project: AiZO_Projekt_2
 # Configurations: Debug
 # =============================================================================
 
@@ -41,74 +41,85 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target AiZO_Projekt2
+# Object build statements for EXECUTABLE target AiZO_Projekt_2
 
 
 #############################################
-# Order-only phony target for AiZO_Projekt2
+# Order-only phony target for AiZO_Projekt_2
 
-build cmake_object_order_depends_target_AiZO_Projekt2: phony || CMakeFiles/AiZO_Projekt2.dir
+build cmake_object_order_depends_target_AiZO_Projekt_2: phony || CMakeFiles/AiZO_Projekt_2.dir
 
-build CMakeFiles/AiZO_Projekt2.dir/main.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/main.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\main.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir
+build CMakeFiles/AiZO_Projekt_2.dir/main.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/main.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\main.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir
 
-build CMakeFiles/AiZO_Projekt2.dir/source/MainMenu.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/MainMenu.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\MainMenu.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/CzytnikGrafow.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/CzytnikGrafow.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\CzytnikGrafow.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
-build CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphMatrix.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/WeightedDirectedGraphMatrix.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\WeightedDirectedGraphMatrix.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/Dijkstra.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/Dijkstra.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\Dijkstra.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
-build CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphList.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/WeightedDirectedGraphList.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\WeightedDirectedGraphList.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/GeneratorGrafow.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/GeneratorGrafow.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\GeneratorGrafow.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
-build CMakeFiles/AiZO_Projekt2.dir/source/PrimMatrixMST.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/PrimMatrixMST.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\PrimMatrixMST.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/GrafManager.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/GrafManager.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\GrafManager.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
-build CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/PrimListMST.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\PrimListMST.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/ListaSasiedztwa.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/ListaSasiedztwa.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\ListaSasiedztwa.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
-build CMakeFiles/AiZO_Projekt2.dir/source/DijkstraShortestPathMatrix.cpp.obj: CXX_COMPILER__AiZO_Projekt2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/DijkstraShortestPathMatrix.cpp || cmake_object_order_depends_target_AiZO_Projekt2
-  DEP_FILE = CMakeFiles\AiZO_Projekt2.dir\source\DijkstraShortestPathMatrix.cpp.obj.d
-  FLAGS = -static-libstdc++ -static-libgcc -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
-  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt2.dir\source
+build CMakeFiles/AiZO_Projekt_2.dir/source/MacierzIncydencji.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/MacierzIncydencji.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\MacierzIncydencji.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
+
+build CMakeFiles/AiZO_Projekt_2.dir/source/Menu.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/Menu.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\Menu.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
+
+build CMakeFiles/AiZO_Projekt_2.dir/source/Prim.cpp.obj: CXX_COMPILER__AiZO_Projekt_2_unscanned_Debug C$:/Users/Patryk/CLionProjects/AiZO_Projekt2/source/Prim.cpp || cmake_object_order_depends_target_AiZO_Projekt_2
+  DEP_FILE = CMakeFiles\AiZO_Projekt_2.dir\source\Prim.cpp.obj.d
+  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
+  OBJECT_FILE_DIR = CMakeFiles\AiZO_Projekt_2.dir\source
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target AiZO_Projekt2
+# Link build statements for EXECUTABLE target AiZO_Projekt_2
 
 
 #############################################
-# Link the executable AiZO_Projekt2.exe
+# Link the executable AiZO_Projekt_2.exe
 
-build AiZO_Projekt2.exe: CXX_EXECUTABLE_LINKER__AiZO_Projekt2_Debug CMakeFiles/AiZO_Projekt2.dir/main.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/MainMenu.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphMatrix.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/WeightedDirectedGraphList.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimMatrixMST.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/PrimListMST.cpp.obj CMakeFiles/AiZO_Projekt2.dir/source/DijkstraShortestPathMatrix.cpp.obj
-  FLAGS = -static-libstdc++ -static-libgcc -g
-  LINK_FLAGS = -static
+build AiZO_Projekt_2.exe: CXX_EXECUTABLE_LINKER__AiZO_Projekt_2_Debug CMakeFiles/AiZO_Projekt_2.dir/main.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/CzytnikGrafow.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/Dijkstra.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/GeneratorGrafow.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/GrafManager.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/ListaSasiedztwa.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/MacierzIncydencji.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/Menu.cpp.obj CMakeFiles/AiZO_Projekt_2.dir/source/Prim.cpp.obj
+  FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\AiZO_Projekt2.dir
+  OBJECT_DIR = CMakeFiles\AiZO_Projekt_2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = AiZO_Projekt2.exe
-  TARGET_IMPLIB = libAiZO_Projekt2.dll.a
-  TARGET_PDB = AiZO_Projekt2.exe.dbg
+  TARGET_FILE = AiZO_Projekt_2.exe
+  TARGET_IMPLIB = libAiZO_Projekt_2.dll.a
+  TARGET_PDB = AiZO_Projekt_2.exe.dbg
 
 
 #############################################
@@ -136,7 +147,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build AiZO_Projekt2: phony AiZO_Projekt2.exe
+build AiZO_Projekt_2: phony AiZO_Projekt_2.exe
 
 # =============================================================================
 # Folder targets.
@@ -146,7 +157,7 @@ build AiZO_Projekt2: phony AiZO_Projekt2.exe
 #############################################
 # Folder: C:/Users/Patryk/CLionProjects/AiZO_Projekt2/cmake-build-debug
 
-build all: phony AiZO_Projekt2.exe
+build all: phony AiZO_Projekt_2.exe
 
 # =============================================================================
 # Built-in targets

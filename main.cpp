@@ -1,18 +1,11 @@
-#include <iostream>
-#include "header/MainMenu.h"
+#include "header/Menu.h"
 
+using namespace std;
 
 int main() {
-    MainMenu menu;
-    char choiceMenu;
+    Menu menu;
 
-    do {
-        menu.startMenu();
-        std::cout << "Do you want to continue? (y/n): ";
-        std::cin >> choiceMenu;
-
-        std::cout << "\n=------------=\n";
-    } while (choiceMenu == 'y' || choiceMenu == 'Y');
+    menu.wyswietlMenuGlowne();
 
     return 0;
 }
